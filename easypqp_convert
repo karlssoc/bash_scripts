@@ -1,3 +1,5 @@
+# easypqp is in itself multithreaded 
+
 N=40
 (
 for file in *.mzML; do
