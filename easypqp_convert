@@ -1,0 +1,8 @@
+N=40
+(
+for file in *.mzML; do
+ ((i=i%N)); ((i++==0)) && wait
+ name=$(echo $file | cut -f 1 -d '.')
+easypqp convert --pepxml interact-$name.pep.xml --spectra $file --exclude-range -1.5,3.5 --psms $name.pspkl  --peaks $name.peakpkl & 
+done
+)
